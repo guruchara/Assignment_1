@@ -6,7 +6,7 @@ const SubmissionAssesment = ({ count = 0 }) => {
 
     let finalScore = parseFloat('00.00');
     if (count === 3) {
-        finalScore =100.00
+        finalScore = (parseFloat(Math.ceil(count / 100) * 100.00) + 0.00).toFixed(2);
     }
     else {
         finalScore = 33.33 * count;

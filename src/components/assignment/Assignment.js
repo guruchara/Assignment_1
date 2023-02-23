@@ -24,8 +24,6 @@ const Assignment = () => {
     }
 
     function addAnswer(selectedOption) {
-
-        console.log("inside92")
         let updatedSubmissionData = [...submissionArr];
         updatedSubmissionData[currentIndex] = selectedOption
         setSubmissionArr(updatedSubmissionData)
@@ -71,9 +69,11 @@ const Assignment = () => {
                     </div>
 
                     <div className={styles.secondContainer}>
+                        {currentIndex === 0 && <div></div>}
                         {currentIndex >= 1 && <img className={styles.paginationBtn} src={backArrow} alt="backArrow" onClick={() => preQuestion(currentIndex - 1)} />}
                         <h2 className={styles.attempt}>Attempt Questions Here</h2>
                         {currentIndex !== 2 && <img className={styles.paginationBtn} src={rightArrow} alt="right" onClick={() => nextQuestion(currentIndex + 1)} />}
+                        {currentIndex === 2 && <div></div>}
                     </div>
 
                     <div className={styles.quesCtn}>
@@ -94,4 +94,3 @@ const Assignment = () => {
     )
 }
 export default Assignment;
-// https://github.com/guruchara/Assignment_1
