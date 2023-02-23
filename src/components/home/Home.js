@@ -1,31 +1,38 @@
 //  rs 
 import styles from './home.module.css'
 import testImg from '../../assests/test.png'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import Assignment from '../assignment/Assignment'
+
 const Home = () => {
 
-    const navigate = useNavigate();
+    const [start, setStart] = useState(false)
 
     const handleStart = () => {
-        navigate('/assignment')
+        setStart(true)
+        return
     }
 
     return (
 
-        <div className={styles.mainContainer}>
-            <div className={styles.imgContainer}>
-                <img src={testImg} alt="test" />
-            </div>
+        <>
+            {!start && <div className={styles.mainContainer}>
+                <div className={styles.imgContainer}>
+                    <img src={testImg} alt="test" />
+                </div>
 
-            <h2 className={styles.message}>Welcome to the Test</h2>
+                <h2 className={styles.message}>Welcome to the Test</h2>
 
-            <div className={styles.btnContainer} onClick={() => handleStart()}>
-                <button>
-                    Start
-                </button>
-            </div>
+                <div className={styles.btnContainer} onClick={() => handleStart()}>
+                    <button>
+                        Start
+                    </button>
+                </div>
 
-        </div>
+            </div>}
+
+            {start && <Assignment />}
+        </>
     )
 }
 

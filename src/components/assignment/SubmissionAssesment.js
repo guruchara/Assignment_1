@@ -1,17 +1,15 @@
 import styles from './assignment.module.css'
 import successImg from '../../assests/submit.png'
 import allQuestions from '../rowData/questions'
-import { useState } from 'react'
 
 const SubmissionAssesment = ({ count = 0 }) => {
 
-    const [finalScore, setFinalScore] = useState(parseFloat('00.00'));
-
+    let finalScore = parseFloat('00.00');
     if (count === 3) {
-        setFinalScore(100.00)
+        finalScore =100.00
     }
     else {
-        setFinalScore(33.33 * count)
+        finalScore = 33.33 * count;
     }
 
     return (
