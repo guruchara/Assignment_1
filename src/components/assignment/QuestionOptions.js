@@ -12,7 +12,7 @@ const QuestionOptions = ({ data = {}, currIndex = 0, addAnswer }) => {
     };
 
     useEffect(() => {
-        if (selectedOption) {
+        if (selectedOption && selectedOption.length) {
             addAnswer(selectedOption)
         }
     }, [selectedOption])

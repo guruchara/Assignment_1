@@ -1,6 +1,6 @@
 //  rs 
 import styles from './home.module.css'
-import testImg from '../../assests/test.jpg'
+import testImg from '../../assests/test.png'
 import { useNavigate } from 'react-router-dom'
 const Home = () => {
 
