@@ -49,8 +49,8 @@ const allQuestions = [
         correctAnswer: '125%',
         options: [
             {
-                value: "50%",
-                desc: "50%",
+                value: "90%",
+                desc: "90%",
             },
             {
                 value: "75%",

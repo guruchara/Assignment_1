@@ -77,7 +77,7 @@ const Assignment = () => {
                     </div>
 
                     <div className={styles.quesCtn}>
-                        <QuestionOptions data={allQuestions[currentIndex]} currIndex={currentIndex} addAnswer={addAnswer} />
+                        <QuestionOptions data={allQuestions[currentIndex]} currIndex={currentIndex} addAnswer={addAnswer}  submissionArr={submissionArr} />
                     </div>
 
                     {submissionArr.length === 3 && < div className={styles.submitCtn} onClick={() => handleSubmit()}>

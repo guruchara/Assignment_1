@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from './assignment.module.css'
-const QuestionOptions = ({ data = {}, currIndex = 0, addAnswer }) => {
+const QuestionOptions = ({ data = {}, currIndex = 0, addAnswer,submissionArr=[] }) => {
 
     const allQuestions = []
     allQuestions.push(data)
@@ -27,9 +27,9 @@ const QuestionOptions = ({ data = {}, currIndex = 0, addAnswer }) => {
                         <div className={styles.allOptions} key={index}>
                             <label className={styles.option}>
                                 <input
-                                    type="checkbox"
+                                    type="checkbox" 
                                     value={option.value}
-                                    checked={selectedOption === option.value}
+                                    checked={submissionArr.includes(option.value) || selectedOption === option.value}
                                     onChange={(event) => handleOptionChange(event)}
                                 />
                                 {option.desc}
